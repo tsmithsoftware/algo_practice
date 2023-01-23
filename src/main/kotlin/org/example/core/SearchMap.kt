@@ -29,5 +29,12 @@ data class DecodedStation(
     @Serializable(with = UUIDSerializer::class)
     val id: UUID,
     val name: String,
-    val children: List<DecodedStation> = listOf()
+    val children: List<DecodedStation> = listOf(),
+    var visited: Boolean = false
+)
+
+data class ResultStation(
+    val id: UUID,
+    val name: String,
+    val child: ResultStation?
 )
