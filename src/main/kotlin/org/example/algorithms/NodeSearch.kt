@@ -1,10 +1,11 @@
 package org.example.algorithms
 
 import org.example.core.DecodedStation
-import org.example.core.ResultStation
 import org.example.core.SearchMap
-import java.util.LinkedList
+import org.example.core.exception.NodeNotFoundException
+import kotlin.jvm.Throws
 
 interface NodeSearch {
-    fun findNode(finalStation: DecodedStation, searchMap: SearchMap): LinkedList<ResultStation>
+    @Throws(NodeNotFoundException::class)
+    fun findNode(finalStation: DecodedStation, searchMap: SearchMap): DecodedStation
 }
